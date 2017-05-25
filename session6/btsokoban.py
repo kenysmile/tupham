@@ -143,63 +143,6 @@ while True:
        print(" Victory")
 
        break
-
-        
-                
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-##        for box in boxes:
-##            if pusher_x + dx == box["x"] and pusher_y + dy == box["y"]:
-##                if check(box["x"] + dx, box["y"] + dy, boxes):
-##                    print("You can")
-##                else:
-##                    if is_in_map(box["x"] + dx, box["y"] + dy, size_x, size_y):
-##                        if is_in_map(pusher_x + dx, pusher_y + dy, size_x, size_y):
-##                            
-####        if is_in_map(box["x"] + dx, box["y"] + dy, size_x, size_y):
-##        #truoc mat la hop
-##
-##                            box["x"] += dx
-##                            box["y"] += dy
-##                            
-##                            # cho thang hop di chuyen
-##                            
-##                            pusher_x += dx
-##                            pusher_y += dy
-##                    
-##            # cho thang day hop di chuyen
-##        else:
-##            print("You can't push bro")
-##    
-##    else:
-##        if is_in_map(pusher_x + dx, pusher_y + dy, size_x, size_y):
-##            
-##            pusher_x += dx
-##            pusher_y += dy
-##
-##    if check_overlap(pusher_x + dx, pusher_y + dy, boxes):
-##        for box in boxes:
-##            for des in dest:
-##                if box["x"] == dest["x"] and box["y"] == dest["y"]:
-##                    print_map(size_x, size_y, boxes, pusher_x, pusher_y, dest)
-##                    print(" victory")
-##                    
-##                break
             
         
 
