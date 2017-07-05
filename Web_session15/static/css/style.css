@@ -1,0 +1,75 @@
+h1 {
+    color: red;
+}
+/*
+* h1 - selector
+* color - property
+* red - value
+ */
+
+p {
+    font-weight: bold;
+}
+/*
+*id selector start with a.followed
+ */
+
+#p1{
+    background: #ff00ff;
+    width: 300px;
+    height: 200px;
+    padding: 30px;
+    border: 5px solid red;
+    margin: 30px;
+}
+
+.comicsans{
+    font-family: "Comic Sans MS";
+}
+.bluetext{
+    color: blue;
+}
+/*
+*attribute selectoe is wrapped between[ and ]
+*/
+[type="text"]{
+    border: 2px dashed brown;
+
+}
+[href]{
+    text-shadow: 1px 1px #333333;
+}
+
+ul li {
+    list-style: none;
+}
+
+div > a{
+    font-style: italic;
+}
+img {
+    border-radius: 100%;
+}
+
+img:hover{
+    box-shadow: 0 0 15px #777777;
+}
+
+
+a:active {
+    color: green;
+}
+
+input:focus{
+    border-radius: 8px;
+    outline: 0 none;
+}
+/*
+*display: block
+*display: inline
+display: inline-block
+display: none
+*/
+
+
+

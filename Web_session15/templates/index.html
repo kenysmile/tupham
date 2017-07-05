@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>C4E's corners</title>
+</head>
+
+<body>
+<img src="/images/bluewhale.jpg" alt="">
+{% for flower in flowers %}
+    <img src="{{ flower.image }}" alt="">
+    <h3>{{ flower.title }}</h3>
+    <p>{{ flower.price }}</p>
+{% endfor %}
+    
+
+
+{#<h1>Cuoc doi khon kho cua toi</h1>#}
+{##}
+{#<p>Hom nay troi dep</p>#}
+{##}
+{#<p>Chua boc bi muoi can</p>#}
+{#<img src="https://scontent.fhan5-1.fna.fbcdn.net/v/t1.0-9/17264325_1018310858268956_6451801149871883019_n.jpg?oh=62524a40b6ce2db7552afde06ca17e83&oe=59C38D3F">#}
+{##}
+{#<a href = "http://www.google.com.vn/">Hay bam vao di</a>#}
+{##}
+{#<a href="{{ url_for("about") }}">hay xem em di</a>#}
+{##}
+{#<a href="{{ url_for("add", a = 4, b=5) }}">Bon cong nam bang?</a>#}
+
+</body>
+</html>

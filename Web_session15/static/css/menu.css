@@ -1,0 +1,28 @@
+nav.menu{
+    background: #D5B0AC;
+    /*word-spacing: 20px;*/
+    text-align: center;
+    /*width: 300px;*/
+    /*height: 200px;*/
+    /*padding: 30px;*/
+    /*border: 5px solid red;*/
+    /*margin: 30px;*/
+}
+
+nav > span{
+    font-weight: bold;
+    display: inline-block;
+
+    width: 100px;
+    height: 30px;
+    padding-top: 10px;
+}
+
+nav > span:hover {
+    background: green;
+    /*color: green;*/
+}
+nav.menu_vertical {
+    width: 100px;
+    display: block;
+}
