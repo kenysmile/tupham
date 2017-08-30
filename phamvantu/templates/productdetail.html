@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ foody.name }}</title>
+    <link rel="stylesheet" href="../static/lbs/w3.css">
+    <script src="https://maps.googleapis.com/maps/api/jsvv=3.exp&sensor=false&libraries=places"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <link rel="stylesheet" href="../static/product/container.css">
+    <link rel="stylesheet" href="../static/productdetail.css">
+</head>
+<body style="background: #f7f7f7">
+    <div id="container">
+        <img class="slides" src="../static/images/2.jpg">
+        <img class="slides" src="../static/images/5428302-berry-wallpapers.jpg">
+        <img class="slides" src="../static/images/food-fruits-berry-apricot-strawberr.jpg">
+        <img class="slides" src="../static/images/mood-apple-red-heart-heart-apple-heart-love-background-fruit-wallpaper-widescreen-full-screen-widescreen-hd-wallpapers-background-wallpaper.jpg">
+        <button class="btn" onclick="plusIndex(-1)" id="btn1">&#10094;</button>
+        <button class="btn" onclick="plusIndex(1)" id="btn2">&#10095;</button>
+    </div>
+
+    <div class="w3-row" style="padding: 50px; width: 100%;">
+        <div class="w3-col m6">
+            <div class="img" style="height: 500px;">
+                <img class="product-img" src="{{ foody.image }}" alt="{{ foody.name }}" style="width: 100%; height: 100%">
+            </div>
+        </div>
+
+        <div class="w3-col m6">
+            <div class="product-content" style="padding: 50px; background: white">
+
+                <h2>{{ foody.name }}</h2>
+
+                <div class="product-rating" style="width: 100%; background: white; text-align: left; border: 1px solid #f7f7f7">
+                    <div class="rating-content">
+                        <div class="rating-title">
+
+                            <div class="title-1">
+                                <span style="width: 50px; height: 50px; background: green; border-radius: 100px; ">{{ foody.rating }}</span>
+                                <span style="color: black">{{ foody.address }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-postion">
+                    <a style="text-decoration: none" href="{{ foody.location1 }}">
+                        <span> Map </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+
+    <script>
+        var index = 1;
+
+        function plusIndex(n){
+            index = index + n;
+            showImgae(index);
+        } {
+
+        }
+
+        showImgae(1);
+
+        function  showImgae(n) {
+            var i;
+            var x = document.getElementsByClassName("slides");
+            if (n > x.length){index = 1};
+            if (n < 1){index = x.length};
+            for(i=0;i<x.length;i++)
+                {
+                    x[i].style.display = "none";
+                }
+            x[index - 1].style.display="block";
+        }
+
+        autoSlide();
+        function autoSlide() {
+            var i;
+            var x = document.getElementsByClassName("slides");
+                for(i=0;i<x.length;i++)
+                    {
+                        x[i].style.display = "none";
+                    }
+            if (index > x.length){index = 1}
+            x[index - 1].style.display = "block";
+            index++;
+            setTimeout(autoSlide, 2000);
+
+        }
+
+    </script>
+
+
+</html>

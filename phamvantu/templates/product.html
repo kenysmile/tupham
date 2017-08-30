@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>C4E10's corners</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="../static/lbs/w3.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <link rel="stylesheet" href="../static/product/container.css">
+    <link rel="stylesheet" href="../static/product/product.css">
+</head>
+<body style="background: #f7f7f7">
+
+    <div id="container">
+        <img class="slides" src="../static/images/2.jpg">
+        <img class="slides" src="../static/images/5428302-berry-wallpapers.jpg">
+{#        <img class="slides" src="../static/image_2/1441439784_fruit-iphone-6-wallpapers-56.jpg">#}
+{#        <img class="slides" src="../static/image_2/Fruit%20and%20Samsung%20Galaxy%20S5%20Wallpapers.jpg">#}
+        <img class="slides" src="../static/images/food-fruits-berry-apricot-strawberr.jpg">
+        <img class="slides" src="../static/images/mood-apple-red-heart-heart-apple-heart-love-background-fruit-wallpaper-widescreen-full-screen-widescreen-hd-wallpapers-background-wallpaper.jpg">
+        <button class="btn" onclick="plusIndex(-1)" id="btn1">&#10094;</button>
+        <button class="btn" onclick="plusIndex(1)" id="btn2">&#10095;</button>
+
+    </div>
+
+    <div class="row">
+        {% for foody in foodys %}
+            <div class="col s4 m3" style="border: 0px; padding: 50px; background: #f7f7f7">
+                <div class="card">
+                    <div class="card-image">
+                        <strong>{{ loop.index }}.</strong>
+                        <a href="{{ url_for("productdetail", product_item=loop.index - 1) }}">
+                            <img height="185px" width="185px" src="{{ foody.image }}" alt="{{ foody.name }}">
+                        </a>
+                        <div class="card-content" style="text-align: left; border: 0px; height: 120px">
+                            <div class="name">
+                                <span class="card-name flower-name">{{ foody.name }}</span>
+                            </div>
+
+                            <div class="rating">
+                                <div class="rating-content">
+                                    <span class="rating-title">Đánh giá: <span class="badge" style="background: green; width: 40px; color: #fff; -webkit-border-radius: 100px;-moz-border-radius: 100px;border-radius: 100px; ">{{ foody.rating }}
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+</body>
+
+    <script>
+        var index = 1;
+
+        function plusIndex(n){
+            index = index + n;
+            showImgae(index);
+        } {
+
+        }
+
+        showImgae(1);
+
+        function  showImgae(n) {
+            var i;
+            var x = document.getElementsByClassName("slides");
+            if (n > x.length){index = 1};
+            if (n < 1){index = x.length};
+            for(i=0;i<x.length;i++)
+                {
+                    x[i].style.display = "none";
+                }
+            x[index - 1].style.display="block";
+        }
+
+        autoSlide();
+        function autoSlide() {
+            var i;
+            var x = document.getElementsByClassName("slides");
+                for(i=0;i<x.length;i++)
+                    {
+                        x[i].style.display = "none";
+                    }
+            if (index > x.length){index = 1}
+            x[index - 1].style.display = "block";
+            index++;
+            setTimeout(autoSlide, 2000);
+
+        }
+
+    </script>
+
+</html>
